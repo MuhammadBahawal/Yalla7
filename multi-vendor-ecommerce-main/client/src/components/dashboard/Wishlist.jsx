@@ -32,16 +32,16 @@ const Wishlist = () => {
 
                         <img className='sm:h-full w-full h-[240px]' src={p.image} alt="product image" />
                         <ul className='flex transition-all duration-700 -bottom-10 justify-center items-center gap-2 absolute w-full group-hover:bottom-3'>
-                            <li onClick={() => dispatch(remove_wishlist(p._id))} className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all'><AiFillHeart /></li>
-                            <Link to={`/product/details/${p.slug}`} className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all' ><FaEye /></Link>
-                            <li className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all'><AiOutlineShoppingCart /></li>
+                            <li onClick={() => dispatch(remove_wishlist(p._id))} className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#FFD700] hover:text-white hover:rotate-[720deg] transition-all'><AiFillHeart /></li>
+                            <Link to={`/product/details/${p.slug}`} className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#FFD700] hover:text-white hover:rotate-[720deg] transition-all' ><FaEye /></Link>
+                            <li className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#FFD700] hover:text-white hover:rotate-[720deg] transition-all'><AiOutlineShoppingCart /></li>
                         </ul>
                     </div>
-                    <div className='py-3 text-slate-600 px-2'>
+                    <div className='py-3 text-black px-2 bg-[#FFD700]'>
                         <h2>{p.name}</h2>
                         <div className='flex justify-start items-center gap-3'>
                             <span className='text-lg  font-bold'>${p.price}</span>
-                            <div className='flex'>
+                            <div className='flex text-black'>
                                 <Ratings ratings={p.rating} />
                             </div>
                         </div>

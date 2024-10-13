@@ -15,8 +15,8 @@ const Order = () => {
     }, [orderId])
 
     return (
-        <div className='bg-white p-5'>
-            <h2 className='text-slate-600 font-semibold'>#{myOrder._id} , <span className='pl-1'>{myOrder.date}</span></h2>
+        <div className='bg-[#FFD700] p-5'>
+            <h2 className='text-black font-semibold'>#{myOrder._id} , <span className='pl-1'>{myOrder.date}</span></h2>
             <div className='grid grid-cols-2 gap-3'>
                 <div className='flex flex-col gap-1'>
                     <h2 className='text-slate-600 font-semibold'>Deliver to: {myOrder.shippingInfo?.name}</h2>

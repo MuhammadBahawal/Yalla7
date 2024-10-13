@@ -83,14 +83,14 @@ const Chat = () => {
     const [show, setShow] = useState(false)
 
     return (
-        <div className='bg-white p-3 rounded-md'>
+        <div className='bg-[#FFD700] p-3 rounded-md'>
             <div className='w-full flex relative'>
                 <div className={`w-[230px] md-lg:absolute bg-white transition-all md-lg:h-full ${show ? 'left-0' : '-left-[350px]'} `}>
-                    <div className='flex justify-center gap-3 items-center text-slate-600 text-xl h-[50px]'>
-                        <span><AiOutlineMessage /></span>
-                        <span>Message</span>
+                    <div className='flex justify-center gap-3 items-center text-slate-600 text-xl h-[50px] bg-black'>
+                        <span className='text-[#FFD700]'><AiOutlineMessage /></span>
+                        <span className='text-[#FFD700]'>Message</span>
                     </div>
-                    <div className='w-full flex flex-col text-slate-600 py-4 h-[400px] pr-3'>
+                    <div className='w-full flex flex-col py-4 h-[400px] pr-3 bg-black'>
                         {
                             my_friends.map((f, i) => <Link to={`/dashboard/chat/${f.fdId}`} key={i} className={`flex gap-2 justify-start items-center pl-2 py-[5px]`} >
                                 <div className='w-[30px] h-[30px] rounded-full relative'>
@@ -168,7 +168,7 @@ const Chat = () => {
                                 </div>
                             </div>
                         </div> : <div onClick={()=>setShow(true)} className='w-full flex justify-center items-center text-lg ont-bold text-slate-600 h-[400px]'>
-                            <span>select seller</span>
+                            <span className='text-black'>select seller</span>
                         </div>
                     }
                 </div>
