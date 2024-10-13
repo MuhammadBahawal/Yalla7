@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/493.99b3f565.chunk.js","mappings":"uIAQA,UANqB,WACjB,OACIA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,gBAEb,C","sources":["views/UnAuthorized.jsx"],"sourcesContent":["import React from 'react'\n\nconst UnAuthorized = () => {\n    return (\n        <div>UnAuthorized</div>\n    )\n}\n\nexport default UnAuthorized"],"names":["_jsx","children"],"sourceRoot":""}

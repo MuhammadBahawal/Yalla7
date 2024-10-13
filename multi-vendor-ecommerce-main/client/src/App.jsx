@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Shops from './pages/Shops';
 import Card from './pages/Card';
@@ -8,7 +8,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Shipping from './pages/Shipping';
 import { useDispatch } from 'react-redux';
-import { get_category } from './store/reducers/homeReducer'
+import { get_category } from './store/reducers/homeReducer';
 import CategoryShops from './pages/CategoryShop';
 import SearchProducts from './pages/SearchProducts';
 import Payment from './pages/Payment';
@@ -21,11 +21,14 @@ import ChangePassword from './components/dashboard/ChangePassword';
 import Order from './components/dashboard/Order';
 import Chat from './components/dashboard/Chat';
 import ConfirmOrder from './pages/ConfirmOrder';
+import PrivacyPolicy from './pages/PrivacyPolicy'; // Import PrivacyPolicy component
+
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(get_category())
-  }, [])
+    dispatch(get_category());
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -33,6 +36,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home />} />
         <Route path='/shops' element={<Shops />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} /> {/* Fixed route */}
         <Route path='/products?' element={<CategoryShops />} />
         <Route path='/products/search?' element={<SearchProducts />} />
         <Route path='/card' element={<Card />} />
@@ -40,19 +44,18 @@ function App() {
         <Route path='/shipping' element={<Shipping />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/product/details/:slug' element={<Details />} />
-
+        
         <Route path='/dashboard' element={<ProtectUser />}>
           <Route path='' element={<Dashboard />}>
             <Route path='' element={<Index />} />
             <Route path='my-orders' element={<Orders />} />
             <Route path='my-wishlist' element={<Wishlist />} />
             <Route path='order/details/:orderId' element={<Order />} />
-            <Route path='chage-password' element={<ChangePassword />} />
+            <Route path='change-password' element={<ChangePassword />} />
             <Route path='chat' element={<Chat />} />
             <Route path='chat/:sellerId' element={<Chat />} />
           </Route>
         </Route>
-
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdashboard=self.webpackChunkdashboard||[]).push([[683],{3683:function(e,a,n){n.r(a);n(2791);var r=n(184);a.default=function(){return(0,r.jsx)("div",{children:"Deactive"})}}}]);
+//# sourceMappingURL=683.3b24db49.chunk.js.map
