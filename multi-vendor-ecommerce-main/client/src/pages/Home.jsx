@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Heders from '../components/Headers'
+import { Link } from 'react-router-dom'
 import Banner from '../components/Banner'
 import Categorys from '../components/Categorys'
 import FeatureProducts from '../components/products/FeatureProducts'
 import Products from '../components/products/Products'
 import Footer from '../components/Footer'
 import { get_category, get_products } from '../store/reducers/homeReducer'
+import Carousel from '../components/Carousal'
+import HotDeals from '../components/Deals'
 const Home = () => {
     const dispatch = useDispatch()
     const {products, latest_product, topRated_product, discount_product } = useSelector(state => state.home)
@@ -16,10 +19,25 @@ const Home = () => {
     return (
         <div className='w-full'>
             <Heders />
-            <Banner />
-            <div className='my-4'>
+            <div className="headerCon">
+        <div className="left">
+          <Carousel />
+        </div>
+        <div className="headerConimg">
+          <Link to={`/all-subcategories?category=menfashion`} target="_blank">
+            <img src="/r1.webp" alt="Men Shop" />
+          </Link>
+          <Link to={`/all-subcategories?category=womenfashion`} target="_blank">
+            <img src="/r2.webp" alt="Women Shop" />
+            </Link>
+        </div>
+      </div>
+      <div className="hot-deal">
+        <HotDeals />
+      </div>
+            {/* <div className='my-4'>
                 <Categorys />
-            </div>
+            </div> */}
             <div className='py-[45px]'>
                 <FeatureProducts products={products} />
             </div>
